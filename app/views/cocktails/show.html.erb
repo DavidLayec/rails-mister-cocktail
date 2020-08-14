@@ -12,6 +12,9 @@
         <% @cocktail.doses.each do |dose| %>
           <%= dose.description %>
           <%= dose.ingredient.name %>
+          <%= if @cocktail.avatar.attached? %>
+          <img class="user-image" src="<%= (url_for(@cocktail.avatar))%>">
+          <%= end %>
         <% end %>
         </p>
       </div>
