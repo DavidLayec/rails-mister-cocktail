@@ -6,12 +6,8 @@
 </p>
 
 <p>
-  <strong>Ingredients:</strong>
-  <%= @cocktail.ingredients %>
+<% @cocktail.doses.each do |dose| %>
+  <%= dose.description %>
+  <%= dose.ingredient.name %>
+<% end %>
 </p>
-
-<p>
-  <strong>Doses:</strong>
-  <%= @cocktail.doses %>
-</p>
-

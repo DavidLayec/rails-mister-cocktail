@@ -1,4 +1,5 @@
 class CocktailsController < ApplicationController
+
   def index
     @cocktails = Cocktail.all
   end
@@ -11,10 +12,6 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.new
   end
 
-  def edit
-    # none
-  end
-
   def create
     @cocktail = Cocktail.new(cocktail_params)
 
@@ -25,11 +22,9 @@ class CocktailsController < ApplicationController
     end
   end
 
-  def update
-    # none
-  end
-
-  def destroy
-    # none
+  private
+  def cocktail_params
+    params.require(:cocktail).permit(:name)
   end
 end
+
